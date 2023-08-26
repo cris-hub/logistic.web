@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: MainLayoutComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     data: {
       breadcrumb: null
     },

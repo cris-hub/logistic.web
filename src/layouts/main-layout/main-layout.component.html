@@ -1,0 +1,23 @@
+<div class="l-dashboard">
+  <header class="l-header">
+    <app-nav-dash (sidenavisopenEvent)="toggleSideNav($event)"></app-nav-dash>
+  </header>
+  <div class="l-content">
+    <section>
+      <app-header></app-header>
+
+      <app-sidenav></app-sidenav>
+
+      <app-breadcrumb></app-breadcrumb>
+
+      <mat-drawer-container class="example-container" autosize>
+      </mat-drawer-container>
+
+      
+    </section>
+  </div>
+
+  <footer class="l-footer">
+    <app-footer></app-footer>
+  </footer>
+</div>

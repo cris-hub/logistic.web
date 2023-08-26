@@ -28,8 +28,9 @@ export class LocalStorageService {
     localStorage.setItem(key, JSON.stringify(item));
   }
 
-  parseItem<T>(key: string) {
-    return JSON.parse(localStorage.getItem(key) ?? "") as T;
+  parseItem<T>(key: any): T {
+    let object: any = localStorage.getItem(key);
+    return JSON.parse(object) as T;
   }
 
   setItem(key: string, item: any) {

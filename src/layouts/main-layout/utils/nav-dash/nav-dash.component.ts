@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { User } from 'src/core/models/user';
 
 @Component({
   selector: 'app-nav-dash',
@@ -8,9 +9,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NavDashComponent implements OnInit {
   sidenavisOpen = true;
+  @Output() sidenavisopenEvent: EventEmitter<boolean> = new EventEmitter(this.sidenavisOpen);
+  @Input() user?: User;
 
-  @Output()
-  sidenavisopenEvent: EventEmitter<boolean> = new EventEmitter(this.sidenavisOpen);
 
   ngOnInit(): void {
 

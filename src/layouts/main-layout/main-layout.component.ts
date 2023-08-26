@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SideNavComponent } from './utils/sidenav/sidenav.component';
+import { User } from 'src/core/models/user';
+import { LocalStorageService } from 'src/core/services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -8,10 +10,14 @@ import { SideNavComponent } from './utils/sidenav/sidenav.component';
 })
 export class MainLayoutComponent implements OnInit {
   @ViewChild(SideNavComponent) side?: SideNavComponent;
-  constructor() { }
+  user?: User;
 
-  ngOnInit() {
+  constructor(private storage: LocalStorageService) { }
+
+  ngOnInit(): void {
+    this.user = this.storage.parseItem<User>("currentUser");
   }
+
 
   toggleSideNav(isOpemSideNav: boolean): void {
     isOpemSideNav ? this.side?.close("close") : this.side?.open("open")

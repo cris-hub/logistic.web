@@ -9,7 +9,7 @@ import { AuthenticationService } from 'src/core/services/authentication/authenti
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss']
-  })
+})
 
 export class LoginComponent implements OnInit {
     loginForm!: FormGroup;
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     ) {
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
-            this.router.navigate(['/']);
+            this.router.navigate(['/home']);
         }
     }
 
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-
+        
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
@@ -51,10 +51,13 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.f['username'].value, this.f['password'].value)
             .pipe(first())
             .subscribe({
+                complete:()=>{
+
+                },
                 next: () => {
                     // get return url from route parameters or default to '/'
-                    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                    this.router.navigate([returnUrl]);
+                    this.router.navigate(['/home']);
+                    
                 },
                 error: error => {
                     this.error = error;

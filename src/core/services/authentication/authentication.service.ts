@@ -38,7 +38,7 @@ export class AuthenticationService {
     }
 
     logout() {
-        let user: User = {};
+        let user: any = null;
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(user);
     }

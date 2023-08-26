@@ -1,12 +1,12 @@
 <div class="l-dashboard">
   <header class="l-header">
-    <app-nav-dash [user]="user" (sidenavisopenEvent)="toggleSideNav($event)"></app-nav-dash>
+    <app-nav-dash (logout)="logout($event)" [user]="user" (sidenavisopenEvent)="toggleSideNav($event)"></app-nav-dash>
   </header>
   <div class="l-content">
     <section>
       <app-header></app-header>
 
-      <app-sidenav [user]="user"></app-sidenav>
+      <app-sidenav (logout)="logout($event)" [user]="user"></app-sidenav>
 
       <app-breadcrumb></app-breadcrumb>
 

@@ -1,48 +1,64 @@
 <mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
   <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
     <mat-list role="list">
-
-      <mat-list-item *ngIf="!user" role="listitem">
-        <mat-icon matListItemIcon>login</mat-icon>
-        <div matListItemTitle>Login</div>
-        <div matListItemLine>Login and find your products</div>
-      </mat-list-item>
-
-      <mat-list-item *ngIf="!user" role="listitem">
-        <mat-icon matListItemIcon>person_add</mat-icon>
-        <div matListItemTitle>Signup</div>
-        <div matListItemLine>Signup and track your products</div>
-      </mat-list-item>
-
-      <mat-list-item *ngIf="user" role="listitem">
-        <mat-icon matListItemIcon>logout</mat-icon>
-        <div matListItemTitle>Logout</div>
-        <div matListItemLine>Logout of account</div>
-      </mat-list-item>
-
-      <mat-list-item *ngIf="user" role="listitem">
-        <mat-icon matListItemIcon>person</mat-icon>
-        <div matListItemTitle>{{user.username}} | Profile</div>
-        <div matListItemLine>Details account</div>
-      </mat-list-item>
-
-
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>handshake</mat-icon>
-        <div matListItemTitle>Products</div>
-        <div matListItemLine>Track some product</div>
-      </mat-list-item>
-
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>request_quote</mat-icon>
-        <div matListItemTitle>Shipping rate</div>
-        <div matListItemLine>Shipping rate for your shipments</div>
-      </mat-list-item>
-
-
+      <div class="row">
+        <div class="col-md-12">
+          <button *ngIf="!user">
+            <mat-list-item [routerLink]="'/login'" role="listitem">
+              <mat-icon matListItemIcon>login</mat-icon>
+              <div matListItemTitle>Login</div>
+              <div matListItemLine>Login and find your products</div>
+            </mat-list-item>
+          </button>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <button *ngIf="!user">
+          <mat-list-item *ngIf="!user" role="listitem">
+            <mat-icon matListItemIcon>person_add</mat-icon>
+            <div matListItemTitle>Signup</div>
+            <div matListItemLine>Signup and track your products</div>
+          </mat-list-item>
+        </button>
+      </div>
+      <div class="col-md-12">
+        <button *ngIf="user">
+          <mat-list-item (click)="logout.emit(true)" role="listitem">
+            <mat-icon matListItemIcon>logout</mat-icon>
+            <div matListItemTitle>Logout</div>
+            <div matListItemLine>Logout of account</div>
+          </mat-list-item>
+        </button>
+      </div>
+      <div class="col-md-12">
+        <button *ngIf="user">
+          <mat-list-item role="listitem">
+            <mat-icon matListItemIcon>person</mat-icon>
+            <div matListItemTitle>{{user.username}} | Profile</div>
+            <div matListItemLine>Details account</div>
+          </mat-list-item>
+        </button>
+      </div>
+      <div class="col-md-12">
+        <button>
+          <mat-list-item role="listitem">
+            <mat-icon matListItemIcon>handshake</mat-icon>
+            <div matListItemTitle>Products</div>
+            <div matListItemLine>Track some product</div>
+          </mat-list-item>
+        </button>
+      </div>
+      <div class="col-md-12">
+        <button>
+          <mat-list-item role="listitem">
+            <mat-icon matListItemIcon>request_quote</mat-icon>
+            <div matListItemTitle>Shipping rate</div>
+            <div matListItemLine>Shipping rate for your shipments</div>
+          </mat-list-item>
+        </button>
+      </div>
     </mat-list>
   </mat-sidenav>
-
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

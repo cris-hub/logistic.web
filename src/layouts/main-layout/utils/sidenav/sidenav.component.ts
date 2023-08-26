@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
 import { User } from 'src/core/models/user';
 import { LocalStorageService } from 'src/core/services/local-storage/local-storage.service';
@@ -10,8 +10,9 @@ import { LocalStorageService } from 'src/core/services/local-storage/local-stora
 
 })
 export class SideNavComponent implements OnInit {
-  @Input() isOpemSideNav?: boolean;
   @ViewChild('sidenav') sidenav?: MatSidenav;
+  @Output() logout: EventEmitter<boolean> = new EventEmitter();
+  @Input() isOpemSideNav?: boolean;
   @Input() user?: User;
 
   constructor() { }

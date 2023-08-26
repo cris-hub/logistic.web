@@ -10,6 +10,7 @@ import { User } from 'src/core/models/user';
 export class NavDashComponent implements OnInit {
   sidenavisOpen = true;
   @Output() sidenavisopenEvent: EventEmitter<boolean> = new EventEmitter(this.sidenavisOpen);
+  @Output() logout: EventEmitter<boolean> = new EventEmitter();
   @Input() user?: User;
 
 

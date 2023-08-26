@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/core/guards/auth.guard';
 import { MainLayoutComponent } from 'src/layouts/main-layout/main-layout.component';
 import { LoginModule } from 'src/modules/login/login.module';
+import { ProductsCustomersModule } from 'src/modules/products_customers/products-customers.module';
 import { HomeComponent } from 'src/pages/home/home.component';
 
 
@@ -32,6 +33,11 @@ const routes: Routes = [
     path: 'login',
     component: MainLayoutComponent,
     loadChildren: () => LoginModule,
+  },
+  {
+    path: 'products',
+    component: MainLayoutComponent,
+    loadChildren: () => ProductsCustomersModule,
   }
 
 ];

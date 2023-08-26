@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/core/guards/auth.guard';
-import { MainLayoutComponent } from 'src/layouts/main-layout/main-layout.component';
-import { LoginModule } from 'src/modules/login/login.module';
-import { ProductsCustomersModule } from 'src/modules/products_customers/products-customers.module';
-import { HomeComponent } from 'src/pages/home/home.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { LoginModule } from './modules/login/login.module';
+import { ProductsCustomersModule } from './modules/products_customers/products-customers.module';
+import { HomeComponent } from './pages/home/home.component';
+
 
 
 

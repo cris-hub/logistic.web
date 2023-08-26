@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SideNavComponent } from './utils/sidenav/sidenav.component';
-import { User } from 'src/core/models/user';
-import { LocalStorageService } from 'src/core/services/local-storage/local-storage.service';
-import { AuthenticationService } from 'src/core/services/authentication/authentication.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/core/models/user';
+import { AuthenticationService } from 'src/app/core/services/authentication/authentication.service';
+import { LocalStorageService } from 'src/app/core/services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-main-layout',

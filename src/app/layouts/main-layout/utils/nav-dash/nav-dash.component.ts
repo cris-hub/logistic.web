@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { User } from 'src/core/models/user';
+import { User } from 'src/app/core/models/user';
 
 @Component({
   selector: 'app-nav-dash',

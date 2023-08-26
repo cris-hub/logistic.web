@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
-import { User } from 'src/core/models/user';
-import { LocalStorageService } from 'src/core/services/local-storage/local-storage.service';
+import { MatSidenav } from '@angular/material/sidenav';
+import { User } from 'src/app/core/models/user';
 
 @Component({
   selector: 'app-sidenav',

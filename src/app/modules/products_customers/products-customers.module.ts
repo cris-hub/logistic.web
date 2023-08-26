@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { SharedModule } from 'src/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsCustomersRoutingModule } from './products-customers-routing.module';
-import { MatCardModule } from '@angular/material/card';
 import { SearchComponent } from './pages/search/search.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ProductListComponent } from './pages/product-list/product-list.component';
 
 
 
 @NgModule({
-    declarations: [SearchComponent],
+    declarations: [SearchComponent, ProductDetailComponent, ProductListComponent],
     imports: [
         CommonModule,
         SharedModule,

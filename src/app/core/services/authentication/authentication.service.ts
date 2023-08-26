@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, empty } from 'rxjs';
 import { map } from 'rxjs/operators';
 import jwt_decode from "jwt-decode";
 import { environment } from 'src/environments/environment.prod';
-import { User } from 'src/core/models/user';
+import { User } from '../../models/user';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {

@@ -12,7 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
-
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
     declarations: [
     ],
@@ -23,15 +23,15 @@ import { MatListModule } from '@angular/material/list';
         CommonModule,
 
         // Material
-        MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatSelectModule, MatFormFieldModule, MatCheckboxModule, MatGridListModule, MatListModule
+        MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatSelectModule, MatFormFieldModule, MatCheckboxModule, MatGridListModule, MatListModule, MatCardModule
     ],
     exports: [
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        
+
         // Material
-        MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatSelectModule, MatFormFieldModule, MatCheckboxModule, MatGridListModule, MatListModule
+        MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatSelectModule, MatFormFieldModule, MatCheckboxModule, MatGridListModule, MatListModule, MatCardModule
 
     ],
     providers: [

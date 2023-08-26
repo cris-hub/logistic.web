@@ -1,0 +1,14 @@
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Login</mat-list-item>
+      <mat-list-item role="listitem">signup</mat-list-item>
+      <mat-list-item role="listitem">products</mat-list-item>
+      <mat-list-item role="listitem">shipping rate</mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

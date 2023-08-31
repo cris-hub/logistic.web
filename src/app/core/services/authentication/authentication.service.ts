@@ -30,6 +30,12 @@ export class AuthenticationService {
                 return user;
             }));
     }
+    signup(user: any) {
+        return this.http.post<any>(`${environment.apiAuthenticationUrl}/signup`, user)
+            .pipe(map(user => {
+                return user;
+            }));
+    }
 
     getDataToken(token: string): any {
         if (token != null) {

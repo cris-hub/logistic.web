@@ -51,6 +51,21 @@
                             </mat-form-field>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field>
+                                <mat-label>Dicount porcentage % </mat-label>
+                                <input formControlName="discount" type="number" matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field>
+                                <mat-label>Final price</mat-label>
+                                <input formControlName="finalPrice"
+                                    [value]="form.get('finalPrice')?.value | currency:'USD':'symbol'" matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
                 </section>
             </form>
         </mat-card>

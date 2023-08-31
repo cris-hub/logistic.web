@@ -5,21 +5,25 @@
   </button>
   <span> Logistic Web App </span>
   <span class="example-spacer"></span>
-  <button mat-icon-button [routerLink]="'/products/search'" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <button mat-icon-button [routerLink]="'/products/search'" class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon">
     <mat-icon>search</mat-icon>
   </button>
-  <button *ngIf="!user" [routerLink]="'/login'" mat-icon-button class="example-icon" aria-label="Example icon-button with login icon">
+  <button *ngIf="!user" [routerLink]="'/login'" mat-icon-button class="example-icon"
+    aria-label="Example icon-button with login icon">
     <mat-icon>login</mat-icon>
   </button>
   <button *ngIf="user" (click)="logout.emit(true)" mat-icon-button class="example-icon"
     aria-label="Example icon-button with logout icon">
     <mat-icon>logout</mat-icon>
   </button>
-  <button *ngIf="user" mat-fab extended class="example-icon" aria-label="Example icon-button with person icon">
+  <button [routerLink]="'/profile'" *ngIf="user" mat-fab extended class="example-icon"
+    aria-label="Example icon-button with person icon">
     <mat-icon>person</mat-icon>
     {{user.username}}
   </button>
-  <button *ngIf="!user" mat-icon-button class="example-icon" aria-label="Example icon-button with person_add icon">
+  <button [routerLink]="'/signup'" *ngIf="!user" mat-icon-button class="example-icon"
+    aria-label="Example icon-button with person_add icon">
     <mat-icon>person_add</mat-icon>
   </button>
 </mat-toolbar>

@@ -7,4 +7,6 @@ export class Product {
   price: any;
   conveyance: any;
   place: any;
+  discount: any;
+  finalPrice: any;
 }

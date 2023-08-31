@@ -25,6 +25,8 @@ export class ProductDetailComponent implements OnInit {
       deliveryDay: [this.product.deliveryDay, [Validators.required]],
       productType: [this.product.productType, [Validators.required]],
       price: [this.product.price, [Validators.required]],
+      discount: [this.product.discount, [Validators.required]],
+      finalPrice: [this.product.finalPrice, [Validators.required]],
     })
     this.form.disable()
 

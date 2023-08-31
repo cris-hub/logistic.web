@@ -14,7 +14,7 @@
       </div>
       <div class="col-md-12">
         <button *ngIf="!user">
-          <mat-list-item *ngIf="!user" role="listitem">
+          <mat-list-item [routerLink]="'/signup'" *ngIf="!user" role="listitem">
             <mat-icon matListItemIcon>person_add</mat-icon>
             <div matListItemTitle>Signup</div>
             <div matListItemLine>Signup and track your products</div>
@@ -32,7 +32,7 @@
       </div>
       <div class="col-md-12">
         <button *ngIf="user">
-          <mat-list-item role="listitem">
+          <mat-list-item [routerLink]="'/profile'" role="listitem">
             <mat-icon matListItemIcon>person</mat-icon>
             <div matListItemTitle>{{user.username}} | Profile</div>
             <div matListItemLine>Details account</div>

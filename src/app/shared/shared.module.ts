@@ -8,11 +8,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core'
+import { MatTableModule } from '@angular/material/table';
+
 @NgModule({
     declarations: [
     ],
@@ -23,7 +28,7 @@ import { MatCardModule } from '@angular/material/card';
         CommonModule,
 
         // Material
-        MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatSelectModule, MatFormFieldModule, MatCheckboxModule, MatGridListModule, MatListModule, MatCardModule
+        MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatSelectModule, MatCheckboxModule, MatGridListModule, MatListModule, MatCardModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatDatepickerModule, MatTableModule
     ],
     exports: [
         FormsModule,
@@ -31,7 +36,7 @@ import { MatCardModule } from '@angular/material/card';
         HttpClientModule,
 
         // Material
-        MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatSelectModule, MatFormFieldModule, MatCheckboxModule, MatGridListModule, MatListModule, MatCardModule
+        MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatSelectModule, MatCheckboxModule, MatGridListModule, MatListModule, MatCardModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatDatepickerModule, MatTableModule
 
     ],
     providers: [

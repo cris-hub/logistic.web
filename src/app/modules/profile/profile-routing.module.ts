@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignupComponent } from './pages/signup/signup.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 const routes: Routes = [{
   path: '',
   data: {
     breadcrumb: '',
-    pathComplete: 'signup',
+    pathComplete: 'profile',
   },
   children: [
     {
       path: '',
-      component: SignupComponent
+      component: DetailsComponent
     }
   ]
 }
@@ -21,4 +21,4 @@ const routes: Routes = [{
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class SignupRoutingModule { }
+export class ProfileRoutingModule { }

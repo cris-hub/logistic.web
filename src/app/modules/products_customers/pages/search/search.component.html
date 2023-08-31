@@ -1,18 +1,29 @@
 <div class="container-fluid">
-    <mat-card>
-        <mat-card-content>
-            <form>
-                <div class="form-row ">
-                    <div class="col-md-11">
-                        <label class="sr-only" for="inlineFormInput">Track Number</label>
-                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="ABC1234D">
-                    </div>
+    <div class="container">
+        <mat-card>
+            <mat-card-content>
+                <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                    <div class="form-row ">
+                        <div class="col-md-10">
 
-                    <div class="col-md-1">
-                        <button type="submit" class="btn btn-primary mb-2">Search</button>
+                            <mat-form-field>
+                                <mat-label>Insert Track Number </mat-label>
+                                <input formControlName="id" placeholder="ABC1234D" type="text" matInput>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-2 center">
+                            <button type="submit" class="full-button" mat-flat-button color="primary">Search</button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </mat-card-content>
-    </mat-card>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>
+<br>
+<mat-divider></mat-divider>
+<br>
+<app-product-detail *ngIf="productCreated" [product]=productCreated>
+
+</app-product-detail>

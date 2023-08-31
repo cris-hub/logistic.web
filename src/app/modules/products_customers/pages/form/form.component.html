@@ -1,20 +1,25 @@
 <div class="container-fluid">
     <div class="container">
         <mat-card>
-            <form [formGroup]="form">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
                 <section>
                     <div class="row">
                         <div class="col-md-6">
                             <mat-form-field>
-                                <mat-label>Delivery place </mat-label>
-                                <input formControlName="place" type="text" matInput>
+                                <mat-select formControlName="placeId" placeholder="Select a place">
+                                    <mat-option *ngFor="let place of places" [value]="place.id">{{place.city}} -
+                                        {{place.country}}</mat-option>
+                                </mat-select>
                             </mat-form-field>
                         </div>
 
                         <div class="col-md-6">
                             <mat-form-field>
-                                <mat-label>Transport </mat-label>
-                                <input formControlName="conveyance" type="text" matInput>
+                                <mat-select formControlName="conveyanceId" placeholder="Select a transport type">
+                                    <mat-option *ngFor="let convayance of conveyances"
+                                        [value]="convayance.id">{{convayance.id}} -
+                                        {{convayance.transportTypeValue}}</mat-option>
+                                </mat-select>
                             </mat-form-field>
                         </div>
 
@@ -46,28 +51,28 @@
                         <div class="col-md-6">
                             <mat-form-field>
                                 <mat-label>Delivery price</mat-label>
-                                <input formControlName="price"
-                                    [value]="form.get('price')?.value | currency:'USD':'symbol'" matInput>
+                                <input formControlName="price" min="1" type="number" [value]="form.get('price')?.value"
+                                    matInput>
                             </mat-form-field>
                         </div>
                     </div>
+
                     <div class="row">
-                        <div class="col-md-6">
-                            <mat-form-field>
-                                <mat-label>Dicount porcentage % </mat-label>
-                                <input formControlName="discount" type="number" matInput>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-6">
-                            <mat-form-field>
-                                <mat-label>Final price</mat-label>
-                                <input formControlName="finalPrice"
-                                    [value]="form.get('finalPrice')?.value | currency:'USD':'symbol'" matInput>
-                            </mat-form-field>
+                        <div class="col-md-12">
+                            <button type="submit" class="full-button " mat-flat-button color="primary">Send</button>
                         </div>
                     </div>
+
+
                 </section>
+
             </form>
         </mat-card>
     </div>
 </div>
+<br>
+<mat-divider></mat-divider>
+<br>
+<app-product-detail *ngIf="productCreated" [product]=productCreated>
+
+</app-product-detail>

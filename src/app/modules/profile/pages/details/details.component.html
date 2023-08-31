@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="container">
         <mat-card>
-            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <form [formGroup]="form">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 mt-5">
 
@@ -59,49 +59,8 @@
                                 formControlName="address" type="address" matInput>
                         </mat-form-field>
 
-                        <mat-form-field>
-                            <mat-label>Password</mat-label>
-                            <input [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
-                                formControlName="password" type="password" matInput>
-                            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-                                <div *ngIf="f['password'].errors['required']">Password is required</div>
-                            </div>
-                            <span class="text-danger"
-                                *ngIf="f['password'].touched && f['password']?.errors &&f['password']?.errors!['invalidPassword']">
-                                Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
-                                letter and 1 number
-                            </span>
-                        </mat-form-field>
-                        <mat-form-field>
-                            <mat-label>Password confirmation</mat-label>
-                            <input [ngClass]="{ 'is-invalid': submitted && f['passwordConfirmation'].errors }"
-                                formControlName="passwordConfirmation" type="password" matInput>
-                            <div *ngIf="submitted && f['passwordConfirmation'].errors" class="invalid-feedback">
-                                <div *ngIf="f['passwordConfirmation'].errors['required']">Password is required</div>
-                            </div>
-                            <span class="text-danger"
-                                *ngIf="(f['passwordConfirmation'].touched || submitted)&& f['passwordConfirmation']?.errors &&f['passwordConfirmation']?.errors!['required']">
-                                Confirm Password is required
-                            </span>
-                            <span class="text-danger"
-                                *ngIf="f['passwordConfirmation'].touched &&  f['passwordConfirmation']?.errors && f['passwordConfirmation']?.errors!['passwordMismatch']">
-                                Passwords doesnot match
-                            </span>
-                        </mat-form-field>
-
-                        <mat-card-actions>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button [disabled]="loading" type="submit" class="full-button " mat-flat-button
-                                        color="primary"> <span *ngIf="loading"
-                                            class="spinner-border spinner-border-sm mr-1"></span>
-                                        signup</button>
-                                </div>
-                            </div>
-                        </mat-card-actions>
 
 
-                        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
                     </div>
                 </div>
             </form>

@@ -4,6 +4,8 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { LoginModule } from './modules/login/login.module';
 import { ProductsCustomersModule } from './modules/products_customers/products-customers.module';
 import { HomeComponent } from './pages/home/home.component';
+import { SignupModule } from './modules/signup/signup.module';
+import { ProfileModule } from './modules/profile/profile.module';
 
 
 
@@ -35,10 +37,21 @@ const routes: Routes = [
     loadChildren: () => LoginModule,
   },
   {
+    path: 'signup',
+    component: MainLayoutComponent,
+    loadChildren: () => SignupModule,
+  },
+  {
     path: 'products',
     component: MainLayoutComponent,
     loadChildren: () => ProductsCustomersModule,
+  },
+  {
+    path: 'profile',
+    component: MainLayoutComponent,
+    loadChildren: () => ProfileModule,
   }
+
 
 ];
 

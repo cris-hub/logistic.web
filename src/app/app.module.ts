@@ -13,6 +13,9 @@ import { HeaderComponent } from './layouts/main-layout/utils/header/header.compo
 import { NavDashComponent } from './layouts/main-layout/utils/nav-dash/nav-dash.component';
 import { SideNavComponent } from './layouts/main-layout/utils/sidenav/sidenav.component';
 import { SharedModule } from './shared/shared.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { UnauthorizeInterceptor } from './core/interceptors/UnauthorizeInterceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { SharedModule } from './shared/shared.module';
     SharedModule
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: UnauthorizeInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

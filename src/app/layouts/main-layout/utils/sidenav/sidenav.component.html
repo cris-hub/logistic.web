@@ -41,7 +41,7 @@
       </div>
       <div class="col-md-12">
         <button>
-          <mat-list-item role="listitem">
+          <mat-list-item [routerLink]="'/products'" role="listitem">
             <mat-icon matListItemIcon>handshake</mat-icon>
             <div matListItemTitle>Products</div>
             <div matListItemLine>Track some product</div>
@@ -50,10 +50,19 @@
       </div>
       <div class="col-md-12">
         <button>
-          <mat-list-item role="listitem">
+          <mat-list-item [routerLink]="'/products/shipping/rate'" role="listitem">
             <mat-icon matListItemIcon>request_quote</mat-icon>
             <div matListItemTitle>Shipping rate</div>
-            <div matListItemLine>Shipping rate for your shipments</div>
+            <div matListItemLine>Shipping rate for your shippements</div>
+          </mat-list-item>
+        </button>
+      </div>
+      <div class="col-md-12">
+        <button>
+          <mat-list-item [routerLink]="'/products/search'" role="listitem">
+            <mat-icon matListItemIcon>search</mat-icon>
+            <div matListItemTitle>Track product</div>
+            <div matListItemLine>track your shippements</div>
           </mat-list-item>
         </button>
       </div>

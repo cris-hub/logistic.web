@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService
     ) {
@@ -41,7 +40,7 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-        
+
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
@@ -51,13 +50,13 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.f['username'].value, this.f['password'].value)
             .pipe(first())
             .subscribe({
-                complete:()=>{
+                complete: () => {
 
                 },
                 next: () => {
                     // get return url from route parameters or default to '/'
                     this.router.navigate(['/home']);
-                    
+
                 },
                 error: error => {
                     this.error = error;

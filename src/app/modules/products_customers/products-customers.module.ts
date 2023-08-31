@@ -7,11 +7,13 @@ import { SearchComponent } from './pages/search/search.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
+import { FormComponent } from './pages/form/form.component';
+import { ConveyanceService } from 'src/app/core/services/transport/conveyance.service';
 
 
 
 @NgModule({
-    declarations: [SearchComponent, ProductDetailComponent, ProductListComponent],
+    declarations: [SearchComponent, ProductDetailComponent, ProductListComponent, FormComponent],
     imports: [
         CommonModule,
         SharedModule,
@@ -20,6 +22,6 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
         ReactiveFormsModule,
         ProductsCustomersRoutingModule
     ],
-    providers: [CurrencyPipe]
+    providers: [CurrencyPipe,ConveyanceService]
 })
 export class ProductsCustomersModule { }
